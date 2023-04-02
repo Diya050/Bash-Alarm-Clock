@@ -3,15 +3,15 @@ It is an alarm clock created using Bash Scripting.
 
 Here are the step-by-step instructions to create a bash script for an alarm clock playing music:
 
-1.  Open a text editor on your Linux system. You can use any text editor such as nano, vim, gedit, or emacs.
+*  Open a text editor on your Linux system. You can use any text editor such as nano, vim, gedit, or emacs.
 ```bash
 vi alarm.sh
 ```
-2. Begin the script with the shebang line. The shebang line is the first line of the script, which tells the system what interpreter to use to run the script. In this case, we'll use `#!/bin/bash`.
+* Begin the script with the shebang line. The shebang line is the first line of the script, which tells the system what interpreter to use to run the script. In this case, we'll use `#!/bin/bash`.
 
-3. Set the alarm time. You can set the alarm time by creating a variable in the script. For example, alarm_time="08:00" sets the alarm for 8:00 AM.
+* Set the alarm time. You can set the alarm time by creating a variable in the script. For example, alarm_time="08:00" sets the alarm for 8:00 AM.
 
-4. Get the current time. You can get the current time using the date command and format it to match the alarm time format.
+* Get the current time. You can get the current time using the date command and format it to match the alarm time format.
 
 ```bash
 # Get the current time
@@ -50,15 +50,15 @@ done
 play /path/to/music/file.mp3
 ```
 
-8. Make the script executable using the `chmod` command.
+* Make the script executable using the `chmod` command.
 
 ```bash
 chmod +x alarm.sh
 ```
 
-9. Run the script using `./alarm.sh`.
+* Run the script using `./alarm.sh`.
 
-10. If you get the errror: 
+* If you get the errror: 
 
 ```bash
 ./alarm.sh: line 16: play: command not found
@@ -73,14 +73,14 @@ For example, if you are using Ubuntu or Debian, you can install the sox package 
 sudo apt-get install sox
 ```
 
-11. Once sox is installed, you should be able to run the play command from the terminal and from within your bash script. But if you get errrors: 
+* Once sox is installed, you should be able to run the play command from the terminal and from within your bash script. But if you get errrors: 
 
 ```bash
 play WARN alsa: can't encode 0-bit Unknown or not applicable
 play FAIL formats: no handler for file extension `mp3'
 ```
 
-12. The error message `play FAIL formats: no handler for file extension 'mp3'` indicates that sox is missing the MP3 handler plugin, which is required to play MP3 files.
+* The error message `play FAIL formats: no handler for file extension 'mp3'` indicates that sox is missing the MP3 handler plugin, which is required to play MP3 files.
 
 To resolve this error, you can install the `libsox-fmt-mp3 package`, which contains the `MP3 handler plugin`. You can install it on Ubuntu or Debian using the following command:
 
@@ -88,7 +88,7 @@ To resolve this error, you can install the `libsox-fmt-mp3 package`, which conta
 sudo apt-get install libsox-fmt-mp3
 ```
 
-13. Once the `libsox-fmt-mp3` package is installed, try running the play command again with your MP3 file, and it should work correctly. Your alarm clock is ready.
+* Once the `libsox-fmt-mp3` package is installed, try running the play command again with your MP3 file, and it should work correctly. Your alarm clock is ready.
 
-Mine output:
+* Here's a glipmse of my output:
 ![output](img.png)
