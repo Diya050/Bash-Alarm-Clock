@@ -18,7 +18,7 @@ vi alarm.sh
 current_time=$(date +"%H:%M")
 ```
 
-5. Enter a loop to check if the alarm time has been reached. You can use a while loop to continuously check the current time against the alarm time. The loop sleeps for one minute between checks to reduce the system load.
+* Enter a loop to check if the alarm time has been reached. You can use a while loop to continuously check the current time against the alarm time. The loop sleeps for one minute between checks to reduce the system load.
 ```bash
 # Enter a loop to check if the alarm time has been reached
 while [ "$current_time" != "$alarm_time" ]; do
@@ -26,14 +26,14 @@ while [ "$current_time" != "$alarm_time" ]; do
     current_time=$(date +"%H:%M") # update the current time
 done
 ```
-6. Play the music file when the alarm goes off. You can use the play command from the `sox` package to play the music file.
+* Play the music file when the alarm goes off. You can use the play command from the `sox` package to play the music file.
 
 ```bash
 # Play the music file when the alarm goes off
 play file.mp3
 ```
 
-7. Our complete `alarm.sh` file:
+* Our complete `alarm.sh` file:
 
 ```bash
 #!/bin/bash
