@@ -65,7 +65,9 @@ chmod +x alarm.sh
 ./alarm.sh: line 16: play: command not found
 ```
 then the error message you are seeing (./alarm.sh: line 16: play: command not found) indicates that the play command is not found on your system.
+
 The play command is part of the sox package, which may not be installed on your system by default. You can install it using your distribution's package manager.
+
 For example, if you are using Ubuntu or Debian, you can install the sox package using the following command:
 ```bash
 sudo apt-get install sox
