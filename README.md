@@ -91,4 +91,5 @@ sudo apt-get install libsox-fmt-mp3
 * Once the `libsox-fmt-mp3` package is installed, try running the play command again with your MP3 file, and it should work correctly. Your alarm clock is ready.
 
 * Here's a glipmse of my output:
+
 ![output](img.png)
