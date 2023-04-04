@@ -18,12 +18,15 @@ vi alarm.sh
 current_time=$(date +"%H:%M")
 ```
 
-* Enter a loop to check if the alarm time has been reached. You can use a while loop to continuously check the current time against the alarm time. The loop sleeps for one minute between checks to reduce the system load.
+* Enter a loop to check if the alarm time has been reached. You can use a while loop to continuously check the current time against the alarm time. The loop sleeps for one minute between checks to reduce the system load. `fi` is a keyword used in Bash to mark the end of a conditional statement. It's used to close an if statement or a case statement.
 ```bash
 # Enter a loop to check if the alarm time has been reached
-while [ "$current_time" != "$alarm_time" ]; do
-    sleep 60 # wait for 1 minute
-    current_time=$(date +"%H:%M") # update the current time
+while true; do
+    current_time=$(date +"%H:%M")
+    if [ "$current_time" \> "$alarm_time" ]; then
+        break
+    fi
+    sleep 60
 done
 ```
 * Play the music file when the alarm goes off. You can use the play command from the `sox` package to play the music file.
@@ -38,16 +41,20 @@ play file.mp3
 ```bash
 #!/bin/bash
 
-alarm_time="08:00"
+alarm_time="18:30"
 
 current_time=$(date +"%H:%M")
 
-while [ "$current_time" != "$alarm_time" ]; do
-    sleep 60 # wait for 1 minute
-    current_time=$(date +"%H:%M") # update the current time
+while true; do
+    current_time=$(date +"%H:%M")
+    if [ "$current_time" \> "$alarm_time" ]; then
+        break
+    fi
+    sleep 60
 done
 
-play /path/to/music/file.mp3
+play file.mp3
+
 ```
 
 * Make the script executable using the `chmod` command.
